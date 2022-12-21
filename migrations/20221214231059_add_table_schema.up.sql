@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS `smart_contracts` (
     `resource_address` VARCHAR(120),
     `resource_node_url` VARCHAR(250),
     `resource_offset_stack` INT,
+    `available` TINYINT,
     PRIMARY KEY (`id`),
     CONSTRAINT `contract` UNIQUE(`address`)
     ) ENGINE = InnoDB;

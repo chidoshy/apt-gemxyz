@@ -138,6 +138,12 @@ func (s *MarketplaceEventImpl) Run(
 		if err != nil {
 			log.Fatal(fmt.Sprintf("Get smart contract error - %v", err))
 		}
+		// check contract available to sync
+		if !smartContract.Available {
+			log.Debug("Contract not available")
+			time.Sleep(time.Second * 60)
+			continue
+		}
 		// get transaction
 		transactions, offsetStack, err := adapter.GetTransactionFilter(
 			ctx,

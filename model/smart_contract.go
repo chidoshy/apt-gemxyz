@@ -12,6 +12,7 @@ type SmartContract struct {
 	ResourceAddress     string         `json:"resourceAddress"`
 	ResourceNodeUrl     string         `json:"resourceNodeUrl"`
 	ResourceOffsetStack int            `json:"resourceOffsetStack"`
+	Available           bool           `json:"available"`
 }
 
 type tblSmartContractColumns struct {
@@ -23,6 +24,7 @@ type tblSmartContractColumns struct {
 	ResourceAddress     string
 	ResourceNodeUrl     string
 	ResourceOffsetStack string
+	Available           string
 }
 
 type tblSmartContract struct {
@@ -41,6 +43,7 @@ var tblSmartContractDefine = tblSmartContract{
 		ResourceAddress:     "resource_address",
 		ResourceNodeUrl:     "resource_node_url",
 		ResourceOffsetStack: "resource_offset_stack",
+		Available:           "available",
 	},
 }
 
@@ -54,6 +57,7 @@ func (t tblSmartContract) GetColumns() []string {
 		"resource_address",
 		"resource_node_url",
 		"resource_offset_stack",
+		"available",
 	}
 }
 
