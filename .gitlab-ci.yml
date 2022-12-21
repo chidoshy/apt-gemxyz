@@ -1,0 +1,10 @@
+include:
+  - project: workloads/ci-templates
+    ref: main
+    file: backend-trunkbased-v1.0.yaml
+  - project: workloads/ci-templates
+    ref: main
+    file: golang-test.yml
+
+variables:
+  IMAGE: apt-double/apt-double-backend
