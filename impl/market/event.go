@@ -146,7 +146,10 @@ func (s *MarketplaceEventImpl) Run(
 			smartContract.ResourceNodeUrl,
 			smartContract.ResourceOffsetStack)
 		if err != nil {
-			log.Fatal(fmt.Sprintf("Get transaction error - %v", err))
+			log.Debug(fmt.Sprintf("Get transaction error - %v", err))
+			log.Debug("Something wrong - sleep 30s")
+			time.Sleep(30)
+			continue
 		}
 		// create map event
 		mapEventHandle := make(map[string]string)
